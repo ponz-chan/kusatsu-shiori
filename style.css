@@ -1,0 +1,185 @@
+/* style.css */
+body {
+    background-color: hsl(0, 0%, 0%);
+    font-family: "MS PGothic";
+    color: #ff66cc;
+
+}
+
+h1 {
+    text-align: center;
+    color: #ff66cc;
+    text-shadow: 1px 3px 3px whitesmoke;
+    font-size: 20px; 
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.emoji-img {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    display: inline;
+}
+
+.blink {
+    color: hotpink;
+    text-shadow: 0 0 5px white, 0 0 10px pink, 0 0 15px deeppink;
+    animation: blinkEffect 1s infinite alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes blinkEffect {
+    0% { opacity: 1; }  /* 最初は完全に見える */
+    100% { opacity: 0; } /* 完全に見えなくなる */
+}
+
+p {
+    color: hotpink;
+    font-size: 24px;
+}
+
+a {
+    color: #ff66cc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #6933ff;
+}
+
+
+.custom-checklist {
+
+    column-gap: 20;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin: 0 auto;
+    max-width: 400px;
+
+}
+
+.custom-checklist ul{
+    padding-left: 0;
+    list-style: none;
+    display: inline-block;
+}  
+
+.custom-checklist li {
+    flex: 1 1 calc(50% - 10px); /* 2列にする */
+    display: flex;
+    align-items: center; /* アイコンと文字の高さを揃える */
+    text-align: left; /* テキストを左寄せ */
+}
+
+.custom-checklist input[type="checkbox"] {
+    display: none; /* デフォのチェックボックスを非表示 */
+}
+
+.custom-checklist label {
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding-left: 30px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.custom-checklist label::before {
+    content: "🖤"; /* チェック前のハート */
+    vertical-align: middle;
+    text-shadow:
+        0 0 10px pink, 
+        0 0 20px hotpink; /* さらに光らせる */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* 文字の高さにハートを揃える */
+    font-size: 20px;
+    display: inline-block;
+    line-height: 1;
+}
+
+.custom-checklist input[type="checkbox"]:checked + label::before {
+    content: "💖"; /* チェック後はピンクハート */
+}
+
+h2 {
+    text-align: center;
+    font-size: 20px; /* 大きめの文字 */
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    text-shadow: 
+        0 0 5px white, 
+        0 0 10px pink, 
+        0 0 15px deeppink, 
+        0 0 20px hotpink; /* 文字をキラキラ光らせる */
+}
+
+.schedule-table {
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    border-collapse: collapse; /* セル間の隙間をなくす */
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 8px; /* セル内の余白 */
+    text-align: center; /* 左揃え */
+    border: 1px solid #fccff9; /* 枠線を薄く */
+}
+
+.schedule-table th {
+    font-weight: bold; /* ヘッダー文字を太く */
+}
+
+.schedule-table td {
+}
+
+.schedule-table img {
+    display: block;
+    margin: 0 auto; /* 画像を中央揃え */
+}
+
+
+ul.list {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    margin: 0 auto; /* リスト全体を中央に */
+    display: flex;  /* フレックスボックスにする */
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 子要素を中央揃え */
+}
+
+ul.list li::before {
+    content: ""; /* 何かを挿入する場合はここに指定 */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url('素材/20141654_180711_80.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.5em;
+}
+
+.money {
+    margin: 20px auto; /* 左右の余白を自動で中央に */
+    border-collapse: collapse; /* 罫線をキレイにする */
+    text-align: center; /* 文字も中央揃え */
+}
+
+
+
+.money th{
+    text-align: left;
+}
+.money td{
+    text-align: right;
+}
